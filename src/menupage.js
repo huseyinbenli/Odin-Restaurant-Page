@@ -40,7 +40,10 @@ export default () => {
     },
   ];
   // elements
-  const wrapperDiv = document.createElement("div");
+  const gridContainer = document.createElement("div");
+  const menuHeader = document.createElement("h2");
+  menuHeader.innerText = "Choose your experience";
+  const wrapperDivGrid = document.createElement("div");
   menuList.forEach((item) => {
     // creating elements for each item in the array
     const card = document.createElement("div");
@@ -50,7 +53,9 @@ export default () => {
     const cardDesc = document.createElement("p");
 
     // classes
-    wrapperDiv.classList.add("wrapper-div");
+    gridContainer.classList.add("grid-container");
+    menuHeader.classList.add("menu-header");
+    wrapperDivGrid.classList.add("wrapper-grid-div");
     card.classList.add("card");
     imgWrapper.classList.add("img-wrapper");
     cardTitle.classList.add("card-title");
@@ -66,8 +71,10 @@ export default () => {
     card.appendChild(imgWrapper);
     card.appendChild(cardTitle);
     card.appendChild(cardDesc);
-    wrapperDiv.appendChild(card);
+    wrapperDivGrid.appendChild(card);
+    gridContainer.appendChild(menuHeader);
+    gridContainer.appendChild(wrapperDivGrid);
   });
 
-  return wrapperDiv;
+  return gridContainer;
 };
